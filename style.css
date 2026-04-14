@@ -64,7 +64,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1581092919535-7146ff1c7d57');
+        url('https://i.pinimg.com/1200x/5b/47/fb/5b47fbdd2bbb1e5c87260b890d97ee7f.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -255,4 +255,48 @@ footer {
         padding: 15px;
         font-size: 14px;
     }
+}
+
+
+
+
+
+/* Product Section */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 40px 0;
+}
+
+/* Product Card */
+.product-list li {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.product-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Product Title */
+.product-list h2 {
+    font-size: 18px;
+    color: #1e2a38;
+}
+
+/* Optional icon styling */
+.product-list li::before {
+    content: "⚙️";
+    display: block;
+    font-size: 30px;
+    margin-bottom: 10px;
 }

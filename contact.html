@@ -19,6 +19,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
                 </ul>
             </nav>
         </div>
@@ -44,6 +45,28 @@
         <li><strong>Phone:</strong> +254 716323929</li>
         <li><strong>Email:</strong> info@garagespareparts.com</li>
     </ul>
+    <script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let feedback = document.getElementById("feedback");
+
+    if (name === "" || email === "" || message === "") {
+        feedback.textContent = "Please fill in all fields.";
+        feedback.className = "error";
+        return;
+    }
+
+    feedback.textContent = "Message sent successfully!";
+    feedback.className = "success";
+
+    // clear form
+    this.reset();
+});
+</script>
 
     <!-- footer -->
     <footer>

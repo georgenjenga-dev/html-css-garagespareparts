@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
     <title>check out</title>
+     
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -21,6 +25,38 @@
                 </ul>
             </nav>
         </div>
-        
+
+      <body>
+
+<div class="payment-box">
+
+    <h2>Make Payment</h2>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showMethod('mpesa')">M-Pesa</div>
+        <div class="tab" onclick="showMethod('airtel')">Airtel Money</div>
+    </div>
+
+    <!-- M-Pesa Form -->
+    <div id="mpesa">
+        <input type="text" placeholder="M-Pesa Phone Number (2547XXXXXXX)">
+        <input type="number" placeholder="Amount (KES)">
+        <button onclick="pay('M-Pesa')">Pay with M-Pesa</button>
+    </div>
+
+    <!-- Airtel Money Form -->
+    <div id="airtel" class="hidden">
+        <input type="text" placeholder="Airtel Number (07XXXXXXXX)">
+        <input type="number" placeholder="Amount (KES)">
+        <button onclick="pay('Airtel Money')">Pay with Airtel Money</button>
+    </div>
+
+    
+
+</div>
+
+
+
+
 </body>
 </html>

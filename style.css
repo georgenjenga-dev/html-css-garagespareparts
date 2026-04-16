@@ -325,3 +325,80 @@ footer {
 .product-list li:hover::after {
     background: #e65c00;
 }
+
+
+/* checkout */
+ /* ===== PAYMENT BOX ONLY ===== */
+.payment-box {
+    width: 350px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Title */
+.payment-box h2 {
+    text-align: center;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background: #ddd;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background: #28a745;
+    color: white;
+}
+
+/* Inputs */
+.payment-box input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.payment-box button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-box button:hover {
+    background: #0056b3;
+}
+
+/* Hide inactive payment method */
+.hidden {
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
+.tab.active {
+    background: #28a745;
+    color: white;
+}

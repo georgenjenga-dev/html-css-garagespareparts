@@ -44,4 +44,19 @@ function pay(method) {
 
     alert(`Processing ${method} payment of KES ${amount} for ${phone}`);
 }
-    
+
+// Api 
+function getCars() {
+    fetch("https://carapi.app/api/makes")
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById("cars");
+            container.innerHTML = "";
+
+            data.data.slice(0, 5).forEach(car => {
+                const item = document.createElement("p");
+                item.textContent = car.name;
+                container.appendChild(item);
+            });
+        })
+        .catch(err => console.log(err));

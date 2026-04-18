@@ -50,27 +50,27 @@ function pay(method) {
 // Api call to fetch spare parts
 
 function getspareparts() {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json")
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById("cars");
             container.innerHTML = "";
 
-            // limit results
-            data.slice(0, 6).forEach(part => {
+            // simulate spare parts using car makes
+            data.Results.slice(0, 6).forEach(car => {
                 const item = document.createElement("div");
 
                 item.innerHTML = `
-                    <h3>${part.title}</h3>
-                    <img src="${part.image}" width="100">
-                    <p>KES ${Math.floor(part.price * 130)}</p>
+                    <h3>${car.Make_Name}</h3>
+                    <p>Available Spare Parts</p>
+                    <p>Price: KES ${Math.floor(Math.random() * 5000 + 1000)}</p>
                 `;
 
                 container.appendChild(item);
             });
         })
         .catch(err => {
-            console.log(err);
+            console.error(err);
             document.getElementById("cars").innerHTML = "Failed to load spare parts.";
         });
 }

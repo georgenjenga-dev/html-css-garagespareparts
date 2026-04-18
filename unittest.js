@@ -24,7 +24,7 @@ describe("getSpareParts", () => {
         const result = await getSpareParts("Toyota");
 
         expect(fetch).toHaveBeenCalledWith(
-            "https://api.example.com/parts?car=Toyota"
+            "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json"
         );
 
         expect(result).toEqual(mockResponse.parts);

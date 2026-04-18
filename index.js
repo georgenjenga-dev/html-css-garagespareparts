@@ -45,18 +45,32 @@ function pay(method) {
     alert(`Processing ${method} payment of KES ${amount} for ${phone}`);
 }
 
-// Api 
-function getCars() {
-    fetch("https://carapi.app/api/makes")
+
+
+// Api call to fetch spare parts
+
+function getspareparts() {
+    fetch("https://fakestoreapi.com/products")
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById("cars");
             container.innerHTML = "";
 
-            data.data.slice(0, 5).forEach(car => {
-                const item = document.createElement("p");
-                item.textContent = car.name;
+            // limit results
+            data.slice(0, 6).forEach(part => {
+                const item = document.createElement("div");
+
+                item.innerHTML = `
+                    <h3>${part.title}</h3>
+                    <img src="${part.image}" width="100">
+                    <p>KES ${Math.floor(part.price * 130)}</p>
+                `;
+
                 container.appendChild(item);
             });
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            document.getElementById("cars").innerHTML = "Failed to load spare parts.";
+        });
+}
